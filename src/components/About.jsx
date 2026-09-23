@@ -1,4 +1,5 @@
 import { ArrowUpRight, Instagram, Linkedin, Star } from "lucide-react";
+import ceo from "../assets/ceo.png";
 import { company, links } from "@/data/site";
 import SectionHeading from "./SectionHeading";
 import { UpworkIcon } from "./SocialIcons";
@@ -44,8 +45,16 @@ export default function About() {
           <div className="lg:col-span-3 rounded-3xl p-px bg-linear-to-br from-lilac/50 via-white/5 to-iris/40">
             <div className="h-full rounded-3xl bg-linear-to-br from-[#1b1933] to-[#0f0e1d] p-6 sm:p-8">
               <div className="flex flex-col sm:flex-row sm:items-center gap-5">
-                <div className="grid place-items-center w-20 h-20 shrink-0 rounded-2xl bg-linear-to-br from-lilac to-iris font-display text-3xl font-bold text-[#1a1333]">
-                  SM
+                <div className="relative w-24 h-24 shrink-0">
+                  <span className="absolute -inset-1.5 rounded-full bg-linear-to-br from-lilac to-iris blur-md opacity-70" />
+                  <span className="absolute inset-0 rounded-full p-[2px] bg-linear-to-br from-lilac via-iris to-[#5b4bd6]">
+                    <img
+                      src={ceo}
+                      alt="Muhammad Suleman, Founder and CEO of BlocTech Solutions"
+                      className="w-full h-full rounded-full object-cover"
+                      loading="lazy"
+                    />
+                  </span>
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-[0.2em] text-lilac">Founder &amp; CEO</p>

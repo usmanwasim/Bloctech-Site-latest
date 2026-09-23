@@ -30,16 +30,20 @@ export default function Web3Visual() {
       </div>
 
       {/* inner ring */}
-      <div className="absolute inset-[22%] rounded-full border border-lilac/30 animate-spin-slow">
+      <div className="absolute inset-[20%] rounded-full border border-lilac/30 animate-spin-slow">
         <Node label="BNB" color="#F3BA2F" style={{ left: "85%", top: "15%" }} counter="animate-spin-slow-reverse" />
         <Node label="POL" color="#B98BFF" style={{ left: "15%", top: "85%" }} counter="animate-spin-slow-reverse" />
       </div>
 
-      {/* core block */}
-      <div className="absolute inset-[37%] grid place-items-center">
-        <div className="relative w-full h-full rotate-45 rounded-3xl bg-linear-to-br from-lilac via-iris to-[#5b4bd6] p-[2px] shadow-[0_0_60px_rgba(137,119,241,0.6)]">
-          <div className="w-full h-full rounded-[22px] bg-[#100e22] grid place-items-center">
-            <img src={logo} alt="" className="-rotate-45 w-2/3 h-2/3 object-contain drop-shadow-[0_0_18px_rgba(120,200,255,0.35)]" />
+      {/* core medallion */}
+      <div className="absolute inset-[32%] sm:inset-[28%] grid place-items-center">
+        <div className="relative w-full h-full rounded-full p-[2px] bg-linear-to-br from-lilac via-iris to-[#5b4bd6] shadow-[0_0_70px_rgba(137,119,241,0.55)]">
+          <div className="w-full h-full rounded-full bg-[#0c0b1c] grid place-items-center overflow-hidden">
+            <img
+              src={logo}
+              alt=""
+              className="w-[74%] h-[74%] object-contain drop-shadow-[0_0_22px_rgba(120,200,255,0.45)]"
+            />
           </div>
         </div>
       </div>

@@ -11,7 +11,7 @@ export function Logo({ className = "" }) {
       <img
         src={logo}
         alt={company.name}
-        className="relative h-9 sm:h-11 w-auto object-contain drop-shadow-[0_0_14px_rgba(120,200,255,0.35)] transition-transform duration-300 group-hover:scale-105"
+        className="relative h-10 sm:h-12 w-auto object-contain drop-shadow-[0_0_16px_rgba(120,200,255,0.4)] transition-transform duration-300 group-hover:scale-105"
       />
     </a>
   );
