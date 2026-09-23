@@ -2,13 +2,13 @@ import { ArrowRight, BadgeCheck } from "lucide-react";
 import top from "../assets/top.png";
 import { chains, links } from "@/data/site";
 import Web3Visual from "./Web3Visual";
+import CountUp from "./CountUp";
 import { UpworkIcon } from "./SocialIcons";
 
 const stats = [
   { value: "2020", label: "Building on Web3 since" },
-  { value: "100+", label: "DApps delivered" },
-  { value: "100%", label: "Job Success on Upwork" },
-  { value: "6.4K+", label: "LinkedIn followers" },
+  { to: 500, suffix: "+", label: "DApps delivered" },
+  { to: 100, suffix: "%", label: "Job Success on Upwork" },
 ];
 
 export default function Hero() {
@@ -67,11 +67,15 @@ export default function Hero() {
 
       {/* stats */}
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 mt-14 lg:mt-10">
-        <dl className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+        <dl className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4">
           {stats.map((s) => (
             <div key={s.label} className="glass rounded-2xl px-4 py-5 text-center">
               <dt className="sr-only">{s.label}</dt>
-              <dd className="font-display text-2xl sm:text-3xl font-bold text-gradient">{s.value}</dd>
+              <dd className="font-display text-2xl sm:text-3xl font-bold text-gradient">
+                {s.value ?? (
+                  <CountUp to={s.to} decimals={s.decimals} suffix={s.suffix} />
+                )}
+              </dd>
               <dd className="mt-1 text-xs sm:text-sm text-slate-400">{s.label}</dd>
             </div>
           ))}

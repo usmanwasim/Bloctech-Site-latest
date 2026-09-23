@@ -7,10 +7,11 @@ const offsets = {
   scale: "scale-95",
 };
 
-export default function Reveal({ children, from = "up", delay = 0, className = "" }) {
+export default function Reveal({ children, from = "up", delay = 0, className = "", as = "div" }) {
   const [ref, inView] = useInView();
+  const Tag = as;
   return (
-    <div
+    <Tag
       ref={ref}
       style={{ transitionDelay: `${delay}ms` }}
       className={`transition-all duration-700 ease-out ${
@@ -18,6 +19,6 @@ export default function Reveal({ children, from = "up", delay = 0, className = "
       } ${className}`}
     >
       {children}
-    </div>
+    </Tag>
   );
 }

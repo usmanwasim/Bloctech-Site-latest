@@ -157,6 +157,30 @@
     33% { transform: translate(40px, -30px) scale(1.08); }
     66% { transform: translate(-30px, 20px) scale(0.95); }
   }
+  @keyframes sheen {
+    from { transform: translateX(-120%) skewX(-12deg); }
+    to { transform: translateX(240%) skewX(-12deg); }
+  }
+  @keyframes pop {
+    from { transform: scale(0.6); opacity: 0; }
+    60% { transform: scale(1.05); }
+    to { transform: scale(1); opacity: 1; }
+  }
+  @keyframes flow { to { stroke-dashoffset: -32; } }
+  @keyframes draw { from { stroke-dashoffset: var(--len, 1000); } to { stroke-dashoffset: 0; } }
+  @keyframes travel {
+    0% { offset-distance: 0%; opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { offset-distance: 100%; opacity: 0; }
+  }
+  @keyframes pulse-soft { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+  @keyframes led { 0%, 40% { opacity: 1; } 41%, 80% { opacity: 0.25; } 81%, 100% { opacity: 1; } }
+  @keyframes scan-x {
+    0% { transform: translateX(-60px); opacity: 0; }
+    12%, 88% { opacity: 1; }
+    100% { transform: translateX(700px); opacity: 0; }
+  }
   @keyframes chain-pulse {
     0% { top: 1rem; opacity: 0; }
     15%, 85% { opacity: 1; }
@@ -188,6 +212,34 @@
 }
 
 @layer utilities {
+  /* SVG motion kit — rotate/scale about the element itself */
+  .anim-flow, .anim-travel, .anim-draw, .anim-pulse, .anim-led, .anim-scan, .anim-pop {
+    transform-box: fill-box;
+  }
+  .anim-flow { stroke-dasharray: 6 10; animation: flow 1.4s linear infinite; }
+  .anim-draw { stroke-dasharray: var(--len, 1000); animation: draw 2s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .anim-travel { opacity: 0; }
+  @supports (offset-path: path("M0 0 L1 1")) {
+    .anim-travel { offset-rotate: 0deg; animation: travel 3.2s linear infinite; }
+  }
+  .anim-pulse { animation: pulse-soft 2.8s ease-in-out infinite; }
+  .anim-led { animation: led 2.2s steps(1, end) infinite; }
+  .anim-scan { animation: scan-x 7s ease-in-out infinite; }
+  .anim-pop { transform-origin: center; animation: pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) backwards; }
+
+  /* light sweep across a card on hover */
+  .sheen-host { position: relative; overflow: hidden; }
+  .sheen-host::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 40%;
+    background: linear-gradient(100deg, transparent, rgb(255 255 255 / 0.07), transparent);
+    transform: translateX(-120%) skewX(-12deg);
+    pointer-events: none;
+  }
+  .sheen-host:hover::after { animation: sheen 0.9s ease-out; }
+
   .text-gradient {
     background: linear-gradient(135deg, #ffffff 0%, #c3a7f4 55%, #8977f1 100%);
     -webkit-background-clip: text;
@@ -215,4 +267,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+  .sheen-host::after { display: none; }
+  .anim-draw, .anim-flow { stroke-dashoffset: 0 !important; }
+  .anim-pop { transform: none !important; opacity: 1 !important; }
+  .anim-pulse, .anim-led { opacity: 1 !important; }
+  .anim-travel, .anim-scan { opacity: 0 !important; }
 }
