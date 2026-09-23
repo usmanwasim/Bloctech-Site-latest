@@ -1,11 +1,10 @@
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowRight, Mail, MapPin } from "lucide-react";
 import foot from "../assets/foot.png";
 import { company, links } from "@/data/site";
 import { UpworkIcon } from "./SocialIcons";
 
 const contactItems = [
   { label: "Email", value: company.email, href: `mailto:${company.email}`, Icon: Mail },
-  { label: "Phone", value: company.phone, href: company.phoneHref, Icon: Phone },
   { label: "Office", value: company.address, Icon: MapPin },
 ];
 
@@ -49,7 +48,7 @@ export default function Contact() {
             </a>
           </div>
 
-          <ul className="mt-12 grid gap-3 sm:grid-cols-3 text-left">
+          <ul className="mt-12 grid gap-3 sm:grid-cols-2 text-left">
             {contactItems.map((item) => {
               const { label, value, href, Icon } = item;
               const body = (

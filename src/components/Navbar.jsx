@@ -1,23 +1,18 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/logo-icon.png";
+import logo from "../assets/logo-horizontal.png";
 import { company, links, navLinks } from "@/data/site";
 import { UpworkIcon } from "./SocialIcons";
 
 export function Logo({ className = "" }) {
   return (
-    <a href="#top" className={`flex items-center gap-2.5 ${className}`}>
-      <span className="relative grid place-items-center w-10 h-10 rounded-xl border border-lilac/25 bg-white/5">
-        <span className="absolute inset-0 rounded-xl bg-lilac/20 blur-md" />
-        <img src={logo} alt="" className="relative w-8 h-8 object-contain" />
-      </span>
-      <span className="font-display text-lg sm:text-xl font-bold text-white leading-none">
-        BlocTech
-        <span className="block text-[10px] sm:text-xs font-medium tracking-[0.3em] text-lilac uppercase mt-0.5">
-          Solutions
-        </span>
-      </span>
-      <span className="sr-only">{company.name}</span>
+    <a href="#top" className={`group relative flex items-center ${className}`}>
+      <span className="absolute -inset-x-3 -inset-y-2 rounded-2xl bg-lilac/10 blur-lg opacity-70 transition-opacity duration-300 group-hover:opacity-100" />
+      <img
+        src={logo}
+        alt={company.name}
+        className="relative h-9 sm:h-11 w-auto object-contain drop-shadow-[0_0_14px_rgba(120,200,255,0.35)] transition-transform duration-300 group-hover:scale-105"
+      />
     </a>
   );
 }

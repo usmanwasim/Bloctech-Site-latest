@@ -4,9 +4,7 @@ export const company = {
   tagline:
     "Blockchain solutions for businesses to build, scale and grow on Web3.",
   email: "contact@bloctechsolutions.com",
-  phone: "+92 347 8811355",
-  phoneHref: "tel:+923478811355",
-  address: "5th Floor, AZ Mall, Kohinoor City, Faisalabad, Pakistan",
+  address: "Second Floor, 14-B Gulistan Colony-2, Faisalabad, Pakistan",
   founded: 2020,
 };
 

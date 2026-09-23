@@ -66,7 +66,7 @@ The official website of **BlocTech Solutions**, a Web3 and blockchain developmen
 | **Why BlocTech** | Four-step approach with scroll animations, a live smart-contract editor and a presale DApp demo |
 | **Packages** | Token Launch, Multichain Growth and Enterprise & Tokenization |
 | **About** | Founder profile and links to Upwork, LinkedIn and Instagram |
-| **Contact** | Email, phone, office address and Upwork hire button |
+| **Contact** | Email, office address and Upwork hire button |
 
 The layout is responsive for phones, tablets and desktops. Animations are reduced for visitors who turn on "reduce motion" in their device settings.
 
@@ -122,7 +122,7 @@ npm run lint     # run ESLint
 
 ## Editing content
 
-- **Email, phone, address, social links:** `src/data/site.js`. Changes apply everywhere on the site.
+- **Email, address, social links:** `src/data/site.js`. Changes apply everywhere on the site.
 - **Services:** the `services` list in `src/components/BuildGrid.jsx`.
 - **Packages:** the `packages` list in `src/components/BuildLast.jsx`.
 - **Hero stats:** the `stats` list in `src/components/Hero.jsx`.
