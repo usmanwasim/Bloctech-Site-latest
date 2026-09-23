@@ -1,5 +1,5 @@
 import { Coins, Lock, ShieldCheck } from "lucide-react";
-import logo from "../assets/footlogo.png";
+import logo from "../assets/logo-icon.png";
 
 // Token node that stays upright while its ring rotates.
 function Node({ label, color, style, counter }) {
@@ -39,7 +39,7 @@ export default function Web3Visual() {
       <div className="absolute inset-[37%] grid place-items-center">
         <div className="relative w-full h-full rotate-45 rounded-3xl bg-linear-to-br from-lilac via-iris to-[#5b4bd6] p-[2px] shadow-[0_0_60px_rgba(137,119,241,0.6)]">
           <div className="w-full h-full rounded-[22px] bg-[#100e22] grid place-items-center">
-            <img src={logo} alt="" className="-rotate-45 w-1/3 h-1/3 object-contain" />
+            <img src={logo} alt="" className="-rotate-45 w-2/3 h-2/3 object-contain drop-shadow-[0_0_18px_rgba(120,200,255,0.35)]" />
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
+import lockup from "../assets/logo-lockup.png";
 import { company, links, navLinks } from "@/data/site";
-import { Logo } from "./Navbar";
 import SocialIcons from "./SocialIcons";
 
 const serviceLinks = [
@@ -24,7 +24,9 @@ export default function Footer() {
     <footer className="border-t border-white/10 px-4 sm:px-6 pt-14 pb-8 text-sm">
       <div className="mx-auto max-w-6xl grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
         <div className="space-y-5">
-          <Logo />
+          <a href="#top" className="inline-block">
+            <img src={lockup} alt={company.name} className="w-36 sm:w-40 h-auto" loading="lazy" />
+          </a>
           <p className="max-w-xs text-slate-400 leading-relaxed">{company.tagline}</p>
           <SocialIcons />
         </div>

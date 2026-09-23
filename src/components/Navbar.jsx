@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/footlogo.png";
+import logo from "../assets/logo-icon.png";
 import { company, links, navLinks } from "@/data/site";
 import { UpworkIcon } from "./SocialIcons";
 
 export function Logo({ className = "" }) {
   return (
     <a href="#top" className={`flex items-center gap-2.5 ${className}`}>
-      <span className="grid place-items-center w-9 h-9 rounded-xl bg-linear-to-br from-lilac/30 to-iris/30 border border-lilac/30">
-        <img src={logo} alt="" className="w-5 h-5" />
+      <span className="relative grid place-items-center w-10 h-10 rounded-xl border border-lilac/25 bg-white/5">
+        <span className="absolute inset-0 rounded-xl bg-lilac/20 blur-md" />
+        <img src={logo} alt="" className="relative w-8 h-8 object-contain" />
       </span>
       <span className="font-display text-lg sm:text-xl font-bold text-white leading-none">
         BlocTech
